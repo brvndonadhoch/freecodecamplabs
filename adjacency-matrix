@@ -1,0 +1,19 @@
+
+def adjacency_list_to_matrix(adjacency_list):
+
+    n = len(adjacency_list)
+
+    matrix = [[0] * n for _ in range(n)]
+
+    for u in adjacency_list:
+        for v in adjacency_list[u]:
+            matrix[u][v] = 1
+    
+    for row in matrix:
+        print(row)
+    
+    return matrix
+
+"""usage
+adjacency_list = {0: [1, 2], 1: [2], 2: [0, 3], 3: [2]}
+adjacency_list_to_matrix(adjacency_list)"""

@@ -1,0 +1,21 @@
+def dfs(graph, start_node):
+    visited = set()
+    stack = [start_node]
+    result = []
+    
+    while stack:
+        node = stack.pop()
+
+        if node not in visited:
+            visited.add(node)
+            result.append(node)
+
+            for neighbour in range(len(graph)):
+                if graph[node][neighbour] == 1 and neighbour not in visited:
+                    stack.append(neighbour)
+    return result
+
+"""
+dfs([[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]], 1)
+
+dfs([[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]], 3) """
